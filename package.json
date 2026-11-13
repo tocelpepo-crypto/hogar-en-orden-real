@@ -1,6 +1,6 @@
 {
   "name": "hone-optimizador-windows",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Optimizador de Windows inspirado en Hone; ajustes reversibles por usuario.",
   "main": "main.cjs",
   "author": "",
@@ -15,6 +15,7 @@
     "files": ["main.cjs", "preload.cjs", "index.html", "package.json"],
     "win": { "target": ["nsis"], "artifactName": "Hone-Optimizador-Setup-${version}.${ext}" },
     "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "Hone Optimizador" },
-    "publish": { "provider": "github", "owner": "tocelpepo-crypto", "repo": "hogar-en-orden-real", "releaseType": "draft" }
+    "publish": { "provider": "github", "owner": "tocelpepo-crypto", "repo": "hogar-en-orden-real", "releaseType": "release" }
   }
 }
+
