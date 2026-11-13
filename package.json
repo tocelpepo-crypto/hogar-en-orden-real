@@ -1,6 +1,6 @@
 {
   "name": "hone-optimizador-windows",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Optimizador de Windows inspirado en Hone; ajustes reversibles por usuario.",
   "main": "main.cjs",
   "author": "",
@@ -17,6 +17,7 @@
     "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "Hone Optimizador" }
   }
 }
+
 
 
 

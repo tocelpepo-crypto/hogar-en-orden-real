@@ -1,9 +1,2 @@
-const { contextBridge, ipcRenderer } = require('electron');
-contextBridge.exposeInMainWorld('windowsOptimizer', Object.freeze({
-  available: true,
-  getStatus: () => ipcRenderer.invoke('optimizer:status'),
-  setGameMode: enabled => ipcRenderer.invoke('optimizer:game-mode', Boolean(enabled)),
-  setCaptureReduction: enabled => ipcRenderer.invoke('optimizer:capture-reduction', Boolean(enabled)),
-  restore: () => ipcRenderer.invoke('optimizer:restore'),
-  openGameSettings: () => ipcRenderer.invoke('optimizer:open-settings')
-}));
+const {contextBridge,ipcRenderer}=require('electron');
+contextBridge.exposeInMainWorld('optimizer',Object.freeze({status:()=>ipcRenderer.invoke('o:status'),mode:v=>ipcRenderer.invoke('o:mode',!!v),capture:v=>ipcRenderer.invoke('o:capture',!!v),controller:v=>ipcRenderer.invoke('o:controller',!!v),power:v=>ipcRenderer.invoke('o:power',!!v),startup:(n,v)=>ipcRenderer.invoke('o:startup',n,!!v),choose:()=>ipcRenderer.invoke('o:choose'),gpu:(p,v)=>ipcRenderer.invoke('o:gpu',p,!!v),boost:p=>ipcRenderer.invoke('o:boost',p),dns:()=>ipcRenderer.invoke('o:dns'),restore:()=>ipcRenderer.invoke('o:restore'),settings:t=>ipcRenderer.invoke('o:settings',t)}));
