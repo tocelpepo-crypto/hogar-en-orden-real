@@ -1,0 +1,20 @@
+{
+  "name": "hone-optimizador-windows",
+  "version": "1.0.0",
+  "description": "Optimizador de Windows inspirado en Hone; ajustes reversibles por usuario.",
+  "main": "main.cjs",
+  "author": "",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/tocelpepo-crypto/hogar-en-orden-real.git" },
+  "scripts": { "start": "electron .", "dist": "electron-builder --win nsis", "release": "electron-builder --win nsis --publish always" },
+  "devDependencies": { "electron": "45.3.2", "electron-builder": "26.17.0" },
+  "build": {
+    "appId": "com.hone.demo.optimizer",
+    "productName": "Hone Optimizador",
+    "directories": { "output": "dist" },
+    "files": ["main.cjs", "preload.cjs", "index.html", "package.json"],
+    "win": { "target": ["nsis"], "artifactName": "Hone-Optimizador-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "Hone Optimizador" },
+    "publish": { "provider": "github", "owner": "tocelpepo-crypto", "repo": "hogar-en-orden-real", "releaseType": "draft" }
+  }
+}
