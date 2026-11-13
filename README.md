@@ -1,20 +1,20 @@
-# Hone Optimizador para Windows
+# Glocktimizer para Windows
 
-Aplicación de escritorio independiente inspirada en las funciones públicas de Hone, con opciones sin coste y herramientas reales de Windows:
+Optimizador de PC gaming de escritorio, inspirado en las funciones públicas de Hone. Todas las herramientas y presets incluidos están desbloqueados y sin límite de pago.
 
-- Modo Juego y Game DVR.
-- Apertura de Game Bar con mando.
-- Plan de energía alto rendimiento (guarda el plan anterior).
-- Desactivar/restaurar entradas de inicio del usuario.
-- Preferencia de GPU alta por juego.
-- Iniciar un juego con prioridad superior a normal.
-- Vaciar caché DNS, sin prometer menor ping.
-- Restaurar ajustes guardados.
+## Funciones incluidas
 
-Cada cambio explica su efecto. Las capturas de Game Bar pueden dejar de funcionar, el plan de alto rendimiento puede aumentar temperatura/consumo y los ajustes no garantizan más FPS.
+- **Optimizaciones:** Modo Juego, Game DVR, Game Bar, plan de energía, efectos visuales, aplicaciones de inicio y limpieza DNS.
+- **Juegos:** preferencia de GPU de alto rendimiento por juego.
+- **Modos:** Equilibrado, Rendimiento y Personalizado. El modo personalizado se guarda como preset.
+- **Boost-Ups:** preparar una sesión y abrir un juego con prioridad superior a normal.
+- **Presets:** guardar, aplicar, importar y exportar grupos de ajustes sin límite.
+- **Restauración:** Glocktimizer conserva los valores originales que cambia y ofrece restaurarlos.
 
-## Publicar
+Los cambios afectan a Windows 10/11 y dependen del hardware, los controladores y las opciones disponibles. El plan alto rendimiento puede aumentar consumo/temperatura; Game DVR puede dejar de grabar clips; vaciar DNS no garantiza menor ping. No se promete un aumento fijo de FPS.
 
-GitHub Desktop: clona el repo, copia aquí los archivos, haz **Commit to main** y **Push origin**. En GitHub publica el tag `v1.1.0`; Actions compila el instalador y lo adjunta al release.
+## Crear el instalador en GitHub
 
-Instalador esperado: `Hone-Optimizador-Setup-1.1.0.exe`.
+Sube el proyecto a `main` y publica la etiqueta `v1.2.0`. GitHub Actions compilará el instalador, lo adjuntará al release y guardará una copia en sus artefactos.
+
+El instalador se llamará `Glocktimizer-Setup-1.2.0.exe`.
