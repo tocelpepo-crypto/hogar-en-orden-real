@@ -17,9 +17,10 @@ No desactiva servicios, no mata procesos, no altera drivers ni el registro de to
 4. Abre la carpeta local del repositorio desde GitHub Desktop (**Show in Explorer**).
 5. Copia dentro de esa carpeta los archivos del ZIP: `index.html`, `main.cjs`, `preload.cjs`, `package.json`, `README.md` y la carpeta `.github`. Si pregunta si quieres reemplazar archivos, acepta.
 6. Vuelve a GitHub Desktop. En **Changes**, escribe `Crear optimizador de Windows`, pulsa **Commit to main** y después **Push origin**.
-7. Abre el repositorio en GitHub → **Releases** → **Draft a new release**. En la etiqueta elige/crea `v1.0.1`, selecciona `main`, escribe el título `Hone Optimizador 1.0.1` y publica el release.
+7. Abre el repositorio en GitHub → **Releases** → **Draft a new release**. En la etiqueta elige/crea `v1.0.2`, selecciona `main`, escribe el título `Hone Optimizador 1.0.2` y publica el release.
 8. Ve a **Actions** y espera que **Crear instalador de Windows** termine en verde. El flujo compila la app con Electron y sube el instalador al release.
-9. En **Releases**, abre `v1.0.1` y copia el enlace del archivo `Hone-Optimizador-Setup-1.0.1.exe`.
+9. En **Releases**, abre `v1.0.2` y copia el enlace del archivo `Hone-Optimizador-Setup-1.0.2.exe`.
 
 Para probar o compilar manualmente, instala Node.js 22, abre una terminal en esta carpeta y ejecuta `npm install` y `npm run dist`. El instalador aparecerá en `dist/`.
+
 
