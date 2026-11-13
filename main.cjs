@@ -27,7 +27,8 @@ async function status(){const [m,c,v,...cap]=await Promise.all([readReg(MODE),re
 ipcMain.handle('o:status',status);
 ipcMain.handle('o:mode',async(_,on)=>{windows();await remember(MODE);await put(MODE,on?1:0);return status()});
 ipcMain.handle('o:capture',async(_,on)=>{windows();for(const x of CAPTURES)await remember(x);if(on)for(const x of CAPTURES)await put(x,0);else{const b=await getBackup();for(const x of CAPTURES)await restoreRecord(b,id(x));await saveBackup(b)}return status()});
-ipcMain.handle('o:controller',async(_,on)=>{windows();if(on){await remember(CONTROLLER);await put(CONTROLLER,0)}else{const b=await getBackup();await restoreRecord(b,id(CONTROLLER));await saveBackup(b)}return status()});\nipcMain.handle('o:visual',async(_,on)=>{windows();if(on){await remember(VISUAL);await put(VISUAL,2)}else{const b=await getBackup();await restoreRecord(b,id(VISUAL));await saveBackup(b)}return status()});
+ipcMain.handle('o:controller',async(_,on)=>{windows();if(on){await remember(CONTROLLER);await put(CONTROLLER,0)}else{const b=await getBackup();await restoreRecord(b,id(CONTROLLER));await saveBackup(b)}return status()});
+ipcMain.handle('o:visual',async(_,on)=>{windows();if(on){await remember(VISUAL);await put(VISUAL,2)}else{const b=await getBackup();await restoreRecord(b,id(VISUAL));await saveBackup(b)}return status()});
 ipcMain.handle('o:power',async(_,on)=>{windows();const b=await getBackup();if(on){if(!b.powerGuid){b.powerGuid=await activeGuid();await saveBackup(b)}await exec('powercfg.exe',['/setactive','SCHEME_MIN'])}else if(b.powerGuid){await exec('powercfg.exe',['/setactive',b.powerGuid]);delete b.powerGuid;await saveBackup(b)}return status()});
 ipcMain.handle('o:startup',async(_,name,off)=>{windows();if(typeof name!=='string'||!name||name.length>256)throw Error('Nombre de inicio no válido.');const x={key:RUN,name,type:'REG_SZ'};if(off){await remember(x);await reg(['delete',RUN,'/v',name,'/f'])}else{const b=await getBackup();await restoreRecord(b,id(x));await saveBackup(b)}return status()});
 ipcMain.handle('o:choose',async()=>{const r=await dialog.showOpenDialog({title:'Selecciona el ejecutable del juego',properties:['openFile'],filters:[{name:'Aplicaciones Windows',extensions:['exe']}]});return r.canceled?null:r.filePaths[0]});
@@ -38,6 +39,7 @@ ipcMain.handle('o:restore',async()=>{windows();const b=await getBackup();for(con
 ipcMain.handle('o:settings',(_,uri)=>shell.openExternal(uri==='graphics'?'ms-settings:display-advancedgraphics':'ms-settings:gaming-gamemode'));
 function create(){const w=new BrowserWindow({width:1120,height:850,minWidth:820,minHeight:650,backgroundColor:'#111014',autoHideMenuBar:true,webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});Menu.setApplicationMenu(null);w.loadFile(path.join(__dirname,'index.html'))}
 app.whenReady().then(()=>{create();app.on('activate',()=>{if(BrowserWindow.getAllWindows().length===0)create()})});app.on('window-all-closed',()=>{if(process.platform!=='darwin')app.quit()});
+
 
 
 

@@ -15,6 +15,7 @@ Los cambios afectan a Windows 10/11 y dependen del hardware, los controladores y
 
 ## Crear el instalador en GitHub
 
-Sube el proyecto a `main` y publica la etiqueta `v1.2.0`. GitHub Actions compilará el instalador, lo adjuntará al release y guardará una copia en sus artefactos.
+Sube el proyecto a `main` y publica la etiqueta `v1.2.1`. GitHub Actions compilará el instalador, lo adjuntará al release y guardará una copia en sus artefactos.
 
-El instalador se llamará `Glocktimizer-Setup-1.2.0.exe`.
+El instalador se llamará `Glocktimizer-Setup-1.2.1.exe`.
+

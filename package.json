@@ -1,6 +1,6 @@
 {
   "name": "glocktimizer-windows",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Optimizador de Windows inspirado en Hone; ajustes reversibles por usuario.",
   "main": "main.cjs",
   "author": "",
